@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>URLS</h3>  
+<h5>The urls which are not real or does not belong to Geekforgeeks are not added</h5>
+<table border=5>  
+    <thead>  
+        <td>ID</td>   
+        <td>URL</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["id"]}}</td>    
+            <td>{{row["url"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+ {% endblock %}

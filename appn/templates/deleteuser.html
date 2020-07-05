@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Modify
+{% endblock %}
+
+{% block content %}
+<!-- <div class="links">
+        <a href="{{ url_for('logout.logoutp') }}">Logout</a>
+    </div> -->
+<div class="container">
+  <div>
+    <h5 style="">Do you really want to remove the entry ? </h5> 
+    <form class="box" action="/deleteuser" method="post">
+    <h1>Entry ID</h1>
+    <input class="inp-field" type="text" placeholder="Entry ID" name="id" value="{{
+      request.form.id }}">
+    <input class="btn btn-default" type="submit" value="Delete">
+    <br>
+  <a href="{{ url_for('secret.secretp') }}"><h5>Back</h5></a>
+  </form>
+</div>
+
+</div>
+{% endblock %}

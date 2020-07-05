@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+Subscribe
+{% endblock %}
+
+{% block content %}
+<!-- <div class="links">
+        <a href="{{ url_for('logout.logoutp') }}">Logout</a>
+    </div> -->
+<div class="container">
+  <div>
+  <form class="box" action="/savecoders" method="post">
+    <h1>Subscribe</h1>
+    <input class="inp-field" type="text" placeholder="Username" name="name" value="{{
+    request.form.name }}" required="true">
+     <input class="inp-field" type="email" placeholder="email" name="email" value="{{
+      request.form.email }}" required="true">
+    <input class="btn btn-default" type="submit" value="Subscribe">
+  </form>
+</div>
+</div>
+
+{% endblock %}

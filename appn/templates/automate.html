@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<!-- <div class="links">
+        <a href="{{ url_for('logout.logoutp') }}">Logout</a>
+    </div> -->
+<div class="container">
+  <div>
+    <h5 style="">Do you really want to change the urls database ? </h5> 
+    <form class="box" action="/automatedurl" method="post">
+    <h1 style="display: inline-block;">URL_ID</h1>
+    <input class="inp-field" type="text" placeholder="URL ID" name="id" value="{{
+      request.form.id }}">
+    <input class="btn btn-default" type="submit" value="Automate">
+     <a style="text-decoration: none"class="special" href="{{ url_for('view.viewp') }}"><h5>View Requested URLs</h5></a>
+  </form> 
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Requested URLS</h3>  
+<h5>The urls which are not real or does not belong to Geekforgeeks are not added</h5>
+
+{% if session.logged_in %}
+<div class="slinks">
+<a href ="{{ url_for('remuser.remuserp') }}">
+<h3> >>>Remove a record</h3></a>
+</div>
+{% endif %}
+
+<table border=5>  
+    <thead>  
+        <td>ID</td>  
+        <td>Name</td>  
+        <td>Email</td>  
+        <td>URL</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["id"]}}</td>  
+            <td>{{row["name"]}}</td>  
+            <td>{{row["email"]}}</td>  
+            <td>{{row["url"]}}</td>  
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+
+
+{% endblock %}  

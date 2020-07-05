@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <div class="links">
+        <a href="{{ url_for('logout.logoutp') }}">Logout</a>
+    </div>  -->
+ <h3>Coders </h3>  
+
+<!--<div class="slinks">
+<a href ="{{ url_for('remrecord.remrecordp') }}">
+<h3> >>>Unsubscribe a Coder</h3></a>
+</div>-->
+ <a href="{{ url_for('remrecord.remrecordp') }}"><h5>Delete Record</h5></a>
+<hr>
+<table border=5>  
+    <thead>  
+        <td>ID</td>   
+        <td>NAME</td>
+        <td>EMAIL</td>  
+    </thead>  
+      
+    {% for row in rows %}  
+        <tr>  
+            <td>{{row["id"]}}</td>    
+            <td>{{row["name"]}}</td>  
+            <td>{{row["email"]}}</td> 
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+{% endblock %}  

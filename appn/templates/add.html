@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+Request URL
+{% endblock %}
+{% block content %}
+<!-- <div class="links">
+        <a href="{{ url_for('index.indexp') }}">Home</a>
+    </div> -->
+<div class="container">
+  <div>
+  <form class="box" action="/savedetails" method="post">
+    <h3 class ="something">Details</h3>
+    <input class="inp-field" type="text" placeholder="Username" name="name" value="{{
+      request.form.name }}" required="true">
+     <input class="inp-field" type="email" placeholder="Email" name="email" value="{{
+      request.form.email}}" required="true">
+     <input class="inp-field" type="text" placeholder="Topic URL" name="url" value="{{
+      request.form.url}}" required="true">
+    <input class="btn btn-default" type="submit" value="Add">
+    <h5 style="padding:10px"><a href="{{ url_for('guideline.guidelinep') }}"><h5>Guideline for entering topic URL</h5></a></h5>
+  </form>
+</div>
+</div>
+
+{% endblock %}

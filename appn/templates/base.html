@@ -1,0 +1,64 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - MyFirstApp</title>
+        {% else %}
+        <title>MyFirstApp</title>
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}" />
+    </head>
+    <body>
+        <!-- <div class="top" >
+            <ul style="list-style-type:none;">
+                <li id="left">
+                        <a href="{{ url_for('index.indexp') }}">Home</a>
+                </li>
+            <li id ="title">
+            <h3>Practice DSA Everyday with Me:</h3>
+        </li>
+        {% if session.logged_in %}
+                <li class="right">
+                        <a href="{{ url_for('logout.logoutp') }}">Logout</a>
+                </li>
+            {% else %}
+            <li class = "right">
+                        <a href="{{ url_for('index.indexp') }}">Login</a>
+                </li>
+            {% endif %}
+            </ul>
+        </div> -->
+        <div class="top" >
+            <ul style="list-style-type:none;">
+                {% if session.logged_in %}
+                    <li><a class="special" href="{{ url_for('logout.logoutp') }}">Logout</a></li>
+                {% else %}
+                <li>
+                        <a class="special" href="{{ url_for('login.loginp') }}">Login</a></li>
+                {% endif %}
+                {% if active_page == "index" %}
+                    <li class=home><a class="special" href="{{ url_for('secret.secretp') }}">Secret</a></li>
+                    {% else %}
+                    <li class=home><a class="special" href="{{ url_for('index.indexp') }}">Home</a></li>
+                    {% endif %}
+            <li id ="title">
+            <h3>Practice DSA Everyday with Me:</h3>
+        </li>
+            </ul>
+        </div>
+       <!--  <div class="top">
+            <h3>Practice DSA Everyday with Me !</h3>
+        </div> -->
+
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

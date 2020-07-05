@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<div class="container">
+  <form class="box" action="/tologin" method="post">
+    <h1>Login</h1>
+    {{ form.hidden_tag()}}
+    <input class="inp-field" type="text" placeholder="Username" name="username" value="{{
+      request.form.username }}" required="true">
+     <input class="inp-field" type="password" placeholder="Password" name="password" value="{{
+      request.form.password }}" required="true">
+    <input class="btn btn-default" type="submit" value="Login">
+  </form>
+  {% if error %}
+    <p class="error"><strong>Error</strong> {{ error }}
+  {% endif %}
+</div>
+
+{% endblock %}
