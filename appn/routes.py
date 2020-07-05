@@ -175,7 +175,8 @@ def toLoginp():
             completion = validate(username, password)
             if completion ==False:
                 error = 'Invalid Credentials. Please try again.'
-                return render_template('login.html',error=error)
+                flash('Invalid Credentials. Please try again.')
+                return render_template('login.html',form=form)
             else:
             	session['logged_in'] =True
             	session['username'] = username
