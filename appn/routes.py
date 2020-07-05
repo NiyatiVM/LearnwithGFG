@@ -168,22 +168,26 @@ tologin = Blueprint('tologin',__name__)
 def toLoginp():
     error = None
     form=LoginForm()
-    try:
-        if form.validate_on_submit() and request.method == 'POST':
-            username = request.form['username']
-            password = request.form['password']
-            completion = validate(username, password)
-            if completion ==False:
-                error = 'Invalid Credentials. Please try again.'
-                flash('Invalid Credentials. Please try again.')
-                return render_template('index.html')
-            else:
-            	session['logged_in'] =True
-            	session['username'] = username
-            	return redirect(url_for('secret.secretp'))
-    except:
-        flash("Invalid credentials")
+    #try:
+    if form.validate_on_submit() and request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        completion = validate(username, password)
+        if completion ==False:
+            error = 'Invalid Credentials. Please try again.'
+            flash('Invalid Credentials. Please try again.')
+            return render_template('index.html')
+        else:
+        	session['logged_in'] =True
+        	session['username'] = username
+        	return redirect(url_for('secret.secretp'))
+    else:
+        flash("Errrrror")
         return render_template('index.html')
+    #except:
+        #flash("Invalid credentials")
+        #return render_template('index.html')
+    #finall
 
 
 secret = Blueprint('secret',__name__)
