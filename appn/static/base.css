@@ -5,6 +5,9 @@ body{
 	font-family: cursive;
 	background: #7fffd4;
 }
+@media screen and (max-width: 600px) {
+body{font-family:sans-serif;}
+}
 h3.something{
 	text-align: center;
 	color:white;
@@ -96,7 +99,7 @@ button {
 	font-size: 30px;
 }
 .slinks h4{
-	margin-left:130px;
+	margin-left:110px;
 	text-decoration: none;
 }
 h2
