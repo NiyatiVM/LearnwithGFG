@@ -32,8 +32,11 @@ def is_logged_in(f):
 			return redirect(url_for('login.loginp'))
 	return wrap
 
-
-
+home = Blueprint('/',__name__)
+@home.route('/')
+def homep():  
+    return render_template("index.html")
+    
 index = Blueprint('index',__name__)
 @index.route('/index')
 def indexp():  

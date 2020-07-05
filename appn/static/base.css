@@ -3,13 +3,13 @@ body{
 	margin:0;
 	padding:0;
 	font-family: cursive;
-	background: #75b9e7;
+	background: #7fffd4;
 }
 h3.something{
 	text-align: center;
 	color:white;
 }
-/*#4aa3df,#3498dc,#75b9e7*/
+/*#4aa3df,#3498dc,#75b9e7,#95b9c7*/
 .top 
 {
 background: #191919;
@@ -231,7 +231,8 @@ th {
   color: white;
 }
 thead{
-background-color:#3498dc;
+/*background-color:#3498dc;*/
+background-color:#57d7ac;
 }
 
 .home

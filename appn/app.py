@@ -17,8 +17,9 @@ def create_app():
 	app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URI')
 	db.init_app(app)
 	migrate.init_app(app,db)
-	from .routes import index,login,logout,mailall,viewlinks,view,viewcoders,savecoders,savedetails,secret,tologin
+	from .routes import index,login,logout,mailall,viewlinks,view,viewcoders,savecoders,savedetails,secret,tologin,home
 	from .routes import deleteuser,automatedurl,automation,subscribe,guideline,add,deleterecord,remuser,remrecord
+	app.register_blueprint(home)
 	app.register_blueprint(index)
 	app.register_blueprint(login)
 	app.register_blueprint(logout)
