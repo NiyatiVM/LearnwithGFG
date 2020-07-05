@@ -10,7 +10,8 @@ Can be run locally by using Windows Task scheduler
 
 and a local postgres database
 
-```.env contents
+```
+.env file shall hold
 
 ADMIN_USER = for login 
 
