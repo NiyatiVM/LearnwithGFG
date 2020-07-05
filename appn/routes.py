@@ -182,14 +182,14 @@ def toLoginp():
         if completion ==False:
             error = 'Invalid Credentials. Please try again.'
             flash('Invalid Credentials. Please try again.')
-            return redirect(url_for('login.loginp'),form=form)
+            return render_template('login.html',form=form)
         else:
         	session['logged_in'] =True
         	session['username'] = username
         	return redirect(url_for('secret.secretp'))
     else:
         flash("Errrrror")
-        return redirect(url_for('login.loginp'),form=form)
+        return render_template('login.html',form=form)
     #except:
         #flash("Invalid credentials")
         #return render_template('index.html')
