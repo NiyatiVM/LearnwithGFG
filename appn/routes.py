@@ -176,14 +176,14 @@ def toLoginp():
             if completion ==False:
                 error = 'Invalid Credentials. Please try again.'
                 flash('Invalid Credentials. Please try again.')
-                return render_template('login.html',form=form)
+                return render_template('index.html')
             else:
             	session['logged_in'] =True
             	session['username'] = username
             	return redirect(url_for('secret.secretp'))
     except:
         flash("Invalid credentials")
-        return render_template('login.html',form=form)
+        return render_template('index.html')
 
 
 secret = Blueprint('secret',__name__)
