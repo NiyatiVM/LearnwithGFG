@@ -12,6 +12,7 @@ from .models import Users,Coders,Links
 from .mailit import mailthecoders
 from .automate import ps
 from config import Config
+from decouple import config
 # index = Blueprint('index',__name__)
 # @index.route('/index')
 # def indexp():  
@@ -157,7 +158,7 @@ def loginp():
 
 def validate(username, password):
     completion = False
-    if username == os.environ.get('ADMIN_USER') and password== os.environ.get('ADMIN_PASSKEY'):
+    if username == config('ADMIN_USER') and password== config('ADMIN_PASSKEY'):
         completion=True
     return completion
 
