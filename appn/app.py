@@ -11,8 +11,7 @@ def create_app():
 	app = Flask(__name__)
 	app.config.from_object(Config)
 	app.static_folder = 'static'
-	SECRET_KEY = os.urandom(32)
-	app.config['SECRET_KEY'] = SECRET_KEY
+	app.config['SECRET_KEY'] = config('SECRET')
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 	app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
 	db.init_app(app)
